@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use PolyComp, please cite it using the metadata below."
+type: dataset
+title: "PolyComp: A Polycube-based Benchmark for Compositional 3D Spatial Reasoning in Multimodal Models"
+authors:
+  - family-names: "Patel"
+    given-names: "Siddharth"
+version: "0.1.0"
+repository-code: "https://github.com/sidpatelgit/polycomp"
+url: "https://github.com/sidpatelgit/polycomp"
+abstract: >-
+  A 120-problem benchmark for compositional 3D spatial reasoning in
+  multimodal models, with frozen submitted images, normalized geometry,
+  reproducible request payloads, and model evaluation results.
+keywords:
+  - "compositional spatial reasoning"
+  - "multimodal models"
+  - "polycubes"
+  - "benchmark"

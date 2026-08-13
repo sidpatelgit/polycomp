@@ -1,0 +1,26 @@
+{
+  "schema": "polycomp-results-provenance-v2",
+  "dataset_id": "block_split_120_2026-07-09",
+  "result_rows": 1080,
+  "matrix": {
+    "models": 3,
+    "problems": 120,
+    "presentations": 3
+  },
+  "extraction_policy": "The release contains one finalized visible response string for every model, problem, and presentation cell.",
+  "response_text_policy": "model_response preserves the normalized visible response text exactly, including whitespace. The one refusal has an intentionally empty model_response cell.",
+  "source_material_policy": "Raw provider envelopes and internal selection, retry, and recovery records are intentionally excluded.",
+  "empty_refusal": {
+    "model": "claude-fable-5",
+    "problem_identifier": "block_split_explore_joinery_19",
+    "presentation": "single_image",
+    "model_response": "",
+    "correct_response": {
+      "option": "C"
+    }
+  },
+  "release_artifacts": {
+    "data/results.csv": "2650e48069ab4565f712589018e6c739c36a95fc4850d993dde5d59d67f45110",
+    "data/reported_scores.json": "4155e58ed0b79a2228c1e2519ee06896509d6d561a7ed6f265cf00af111df985"
+  }
+}

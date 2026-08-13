@@ -1,0 +1,89 @@
+{
+  "schema": "polycomp-provenance-v2",
+  "dataset_id": "block_split_120_2026-07-09",
+  "release_files": {
+    "data/protocol.json": "abe6ee8f05a46344ac238129782a20ead096f1ef476e8b99be88cfb6c202e5d0",
+    "data/assets.json": "f431b0d633a2928e1abf337da5c9f93535ad4e78383a2ea95fee18acded51470",
+    "data/problems.jsonl": "7d93cfe5cacc6c048f34e04bc764f7eb71653f35a0ef25c7d4437e1058ee6bcc",
+    "data/request_hashes.csv": "84996bae8f55205dacde72618511bc07b0afae5318f16b6c755305c666f99955",
+    "data/results.csv": "2650e48069ab4565f712589018e6c739c36a95fc4850d993dde5d59d67f45110",
+    "data/reported_scores.json": "4155e58ed0b79a2228c1e2519ee06896509d6d561a7ed6f265cf00af111df985",
+    "data/results_provenance.json": "15d29be88510eab88bb8fac6951c463f32a6bd11b53201c98c30670b24a24a7b",
+    "data/rendering_reference.json": "169c03ed1db5222b6fb4ac69f6d469c7ab2f1e8baa48e05260bca7141fa91e50"
+  },
+  "historical_request_integrity": {
+    "audit_payload_sha256": "Originally recorded per-cell canonical hash of the redacted audit payload. Image bytes are replaced by a fixed placeholder.",
+    "logical_request_sha256": "Originally recorded per-cell canonical hash over provider metadata, the redacted audit payload, and submitted filename plus SHA-256 for each attachment.",
+    "cell_sha256": "Originally recorded per-cell protocol identity hash.",
+    "transmitted_body_sha256": "Derived during release preparation from the exact body inside the originally hash-bound batch input. This per-cell body hash was not itself stored by the original runner.",
+    "batch_input_sha256": "Originally recorded SHA-256 of each complete 120-request batch input file."
+  },
+  "historical_batch_inputs": {
+    "policy": "Only hashes, byte sizes, counts, providers, and presentations are published; full historical batch files are intentionally omitted.",
+    "batches": [
+      {
+        "provider": "anthropic",
+        "presentation": "multi_image_descriptive",
+        "request_count": 120,
+        "file_sha256": "0f6724f61b194a72abcd356ae8903fee9341e1fe0472cd722aa49fffa1d1c55c",
+        "size_bytes": 57057383
+      },
+      {
+        "provider": "anthropic",
+        "presentation": "multi_image_generic",
+        "request_count": 120,
+        "file_sha256": "3e8919c65a348c106157ab3935c7dfafaa71248778dcab9293c3bfa4bf31d528",
+        "size_bytes": 57062783
+      },
+      {
+        "provider": "anthropic",
+        "presentation": "single_image",
+        "request_count": 120,
+        "file_sha256": "9b9a4c2d2b8165a6bc45988657bd8e93b63eabf47a84dca5414f9e7c00b25ee2",
+        "size_bytes": 61109407
+      },
+      {
+        "provider": "gemini",
+        "presentation": "multi_image_descriptive",
+        "request_count": 120,
+        "file_sha256": "e8db0b0dc1512c95491d43cc007aa8f512a19dd4fd18aac92817d8f3a15836a5",
+        "size_bytes": 57038048
+      },
+      {
+        "provider": "gemini",
+        "presentation": "multi_image_generic",
+        "request_count": 120,
+        "file_sha256": "c0f2516380b1c0ffc82e199c0a229df6746900b3dad984c1e694f7eaf1d77b7f",
+        "size_bytes": 57043448
+      },
+      {
+        "provider": "gemini",
+        "presentation": "single_image",
+        "request_count": 120,
+        "file_sha256": "0a543bf7a1c95754023f57447afeff3713c0496973ee18c0c6dee7954af3ecfb",
+        "size_bytes": 61111432
+      },
+      {
+        "provider": "openai",
+        "presentation": "multi_image_descriptive",
+        "request_count": 120,
+        "file_sha256": "bf6c546f3c4a43bb530a082d9bccb5914b1e1cc9e0b640c306407fd6e1221e92",
+        "size_bytes": 57067928
+      },
+      {
+        "provider": "openai",
+        "presentation": "multi_image_generic",
+        "request_count": 120,
+        "file_sha256": "cda401cc906d061c74db5f661426562989b783d35d9e3a3d573a9c3b2529a68d",
+        "size_bytes": 57073328
+      },
+      {
+        "provider": "openai",
+        "presentation": "single_image",
+        "request_count": 120,
+        "file_sha256": "9c039ba6e4fe3f5148d97105503a70c4c4b2a24498d842ef21c60aa2d7e6ebc3",
+        "size_bytes": 61115872
+      }
+    ]
+  }
+}

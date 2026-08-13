@@ -1,0 +1,220 @@
+{
+  "schema": "polycomp-protocol-v1",
+  "dataset_id": "block_split_120_2026-07-09",
+  "evaluation": {
+    "phase": "primary",
+    "trial_index": 1,
+    "problem_count": 120,
+    "presentations": [
+      "single_image",
+      "multi_image_generic",
+      "multi_image_descriptive"
+    ],
+    "providers": [
+      "openai",
+      "anthropic",
+      "gemini"
+    ],
+    "cell_count": 1080,
+    "temperature": {
+      "request_parameter": "omitted",
+      "policy": "provider_default"
+    },
+    "content_order": "optional presentation label, image; main prompt last",
+    "system_instruction": "none for all three benchmark presentations"
+  },
+  "answer_contract": {
+    "format": "JSON object",
+    "exact_keys": [
+      "option"
+    ],
+    "allowed_options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "example": {
+      "option": "A"
+    },
+    "primary_scoring": "one unambiguous option recoverable from JSON; exact-format compliance recorded separately"
+  },
+  "presentations": {
+    "single_image": {
+      "prompt": "The image above shows two views of the same target solid in the top row. The four options A through D appear below the top row. Each option shows two component solids.\nWhich option shows two component solids that together can form the target solid?\nReturn only a JSON object with exactly one key and no additional text:\n- \"option\": one of \"A\", \"B\", \"C\", or \"D\"",
+      "labels": [
+        null
+      ],
+      "submitted_filenames": [
+        "image.png"
+      ],
+      "asset_roles": [
+        "combined_problem_panel"
+      ]
+    },
+    "multi_image_generic": {
+      "prompt": "Five images labeled Image 1 through Image 5 appear above. Image 1 shows two views of the same target solid. Image 2 through Image 5 show option A through option D, respectively. Each option image shows two component solids.\nWhich option shows two component solids that together can form the target solid?\nReturn only a JSON object with exactly one key and no additional text:\n- \"option\": one of \"A\", \"B\", \"C\", or \"D\"",
+      "labels": [
+        "Image 1:",
+        "Image 2:",
+        "Image 3:",
+        "Image 4:",
+        "Image 5:"
+      ],
+      "submitted_filenames": [
+        "image_1.png",
+        "image_2.png",
+        "image_3.png",
+        "image_4.png",
+        "image_5.png"
+      ],
+      "asset_roles": [
+        "target",
+        "option_A",
+        "option_B",
+        "option_C",
+        "option_D"
+      ]
+    },
+    "multi_image_descriptive": {
+      "prompt": "Five images labeled Target and Option A through Option D appear above. The Target image shows two views of the same target solid. Each option image shows two component solids.\nWhich option shows two component solids that together can form the target solid?\nReturn only a JSON object with exactly one key and no additional text:\n- \"option\": one of \"A\", \"B\", \"C\", or \"D\"",
+      "labels": [
+        "Target:",
+        "Option A:",
+        "Option B:",
+        "Option C:",
+        "Option D:"
+      ],
+      "submitted_filenames": [
+        "target_object_views.png",
+        "option_A_components.png",
+        "option_B_components.png",
+        "option_C_components.png",
+        "option_D_components.png"
+      ],
+      "asset_roles": [
+        "target",
+        "option_A",
+        "option_B",
+        "option_C",
+        "option_D"
+      ]
+    }
+  },
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "settings": {
+        "reasoning": {
+          "effort": "max"
+        },
+        "max_output_tokens": 128000,
+        "image": {
+          "encoding": "data_url",
+          "detail": "original"
+        },
+        "store": false,
+        "temperature": {
+          "request_parameter": "omitted",
+          "policy": "provider_default"
+        }
+      }
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "settings": {
+        "output_config": {
+          "effort": "max"
+        },
+        "max_tokens": 128000,
+        "thinking": {
+          "request_parameter": "omitted",
+          "policy": "model_managed_by_effort"
+        },
+        "image": {
+          "encoding": "base64",
+          "resolution": "original"
+        },
+        "store": {
+          "request_parameter": "unsupported"
+        },
+        "temperature": {
+          "request_parameter": "omitted",
+          "policy": "provider_default"
+        }
+      }
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "settings": {
+        "generationConfig": {
+          "maxOutputTokens": 65536,
+          "thinkingConfig": {
+            "thinkingLevel": "high"
+          },
+          "mediaResolution": "MEDIA_RESOLUTION_HIGH"
+        },
+        "image": {
+          "encoding": "inline_data",
+          "resolution": "MEDIA_RESOLUTION_HIGH"
+        },
+        "store": false,
+        "temperature": {
+          "request_parameter": "omitted",
+          "policy": "provider_default"
+        }
+      }
+    }
+  },
+  "endpoints": {
+    "openai": "https://api.openai.com/v1/responses",
+    "anthropic": "https://api.anthropic.com/v1/messages",
+    "gemini": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+  },
+  "batch_envelopes": {
+    "openai": {
+      "custom_id": "<recorded custom id>",
+      "method": "POST",
+      "url": "/v1/responses",
+      "body": "<request body>"
+    },
+    "anthropic": {
+      "custom_id": "<recorded custom id>",
+      "params": "<request body>"
+    },
+    "gemini": {
+      "key": "<recorded custom id>",
+      "request": "<request body>"
+    }
+  },
+  "image_quality": {
+    "single_image_dimensions": [
+      2500,
+      2500
+    ],
+    "png_rasterizer": {
+      "name": "resvg",
+      "version": "0.47.0"
+    },
+    "png_source": "canonical 2500x2500 image.svg",
+    "resize_or_downsample": false,
+    "quality_policy": "Production block-split PNGs must be rasterized from their canonical SVGs with resvg to preserve anti-aliased text and geometry; direct raster-canvas PNGs are not allowed.",
+    "provider_delivery": {
+      "openai": "data URL with detail=original",
+      "anthropic": "base64 image at original resolution",
+      "gemini": "inline_data with MEDIA_RESOLUTION_HIGH"
+    }
+  },
+  "payload_integrity": {
+    "image_hashes": "data/assets.json",
+    "request_integrity_hashes": "data/request_hashes.csv",
+    "algorithm": "SHA-256 of UTF-8 canonical JSON with keys sorted, compact separators, and ensure_ascii=false",
+    "historical_note": "The run recorded image hashes, a hash of the image-redacted audit payload, a logical request hash binding that payload to the image hashes, and a hash of each complete 120-request Batch input. Per-cell transmitted-body hashes were derived during release preparation from those hash-verified Batch inputs; they were not original runner fields."
+  },
+  "frozen_run_plan": {
+    "run_plan_id": "block_split_120_recoverable_option_v1",
+    "canonical_payload_sha256": "2c040b06f6bbbab8892f66b47128b1ea2ed50264d3d8a15043651b270640592b",
+    "problem_order_sha256": "7c12ad7684aa3488d4821b6c034b20749000a87bef1ea88394730db0e17d2c73",
+    "source_file_sha256": "c0d4830fc54285c78d689bb02ca1349046552b869e55030582562cdd37132a2f"
+  }
+}
