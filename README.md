@@ -11,6 +11,9 @@ make network requests, submit jobs, or contain provider-recovery machinery.
 
 ## Setup
 
+Use PolyComp from a repository checkout; no PyPI/wheel distribution is
+supported.
+
 Install [uv](https://docs.astral.sh/uv/), select Python 3.11, and create the
 environment:
 
@@ -26,11 +29,11 @@ uv run --frozen polycomp verify
 ```
 
 Verification checks all 120 problem manifests, the 24 proper cube rotations,
-6-neighbor connectivity and the frozen target partition, an exactly-one-valid-
-option assembly proof for every problem, 120 composite images, 600 committed
-crops, 120 reconstructed reference SVGs, 1,080 request identities, nine complete
-historical batch-input hashes, the 1,080 unique result cells, the one empty
-refusal, and every reported model/presentation score.
+6-neighbor connectivity, the frozen target partition, and a proof that exactly
+one option is valid for every problem. It also checks 120 composite images, 600
+committed crops, 120 reconstructed reference SVGs, 1,080 request identities,
+nine complete historical batch-input hashes, the 1,080 unique result cells, the
+one empty refusal, and every reported model/presentation score.
 
 ## Generate the problem presentations
 
@@ -103,9 +106,10 @@ uv run --frozen polycomp rerender \
 
 The command writes 120 SVGs, 120 single-image PNGs, and 1,200 presentation crop
 files (the generic and descriptive presentations use different filenames for
-the same five pixels), plus `rerender-report.json`. It reconstructs into a
-temporary directory first. With `--verify-frozen`, any SVG, PNG, dimension,
-decoded-pixel, or byte mismatch fails without publishing the output directory.
+the same five byte-identical crop images), plus `rerender-report.json`. It
+reconstructs into a temporary directory first. With `--verify-frozen`, any SVG,
+PNG, dimension, decoded-pixel, or byte mismatch fails without publishing the
+output directory.
 
 Without `--verify-frozen`, the command still compares every output with the
 frozen reference but retains the reconstruction for inspection. Its JSON status
