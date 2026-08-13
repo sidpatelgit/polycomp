@@ -1,6 +1,6 @@
 # PolyComp
 
-PolyComp is the release package for the 120-problem BlockSplit benchmark. It
+PolyComp is the release package for a 120-problem benchmark. It
 contains the exact raster images used in the reported evaluation, normalized
 problem manifests, provider request builders for all three visual
 presentations, and the minimal 1,080-row result table used to compute the paper
