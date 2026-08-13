@@ -267,15 +267,6 @@ uv run --frozen ruff check .
 uv run --frozen ruff format --check .
 ```
 
-## Deliberate omissions
-
-This release excludes credentials, environment files, raw provider response
-bodies, response identifiers, billing/account metadata, internal source paths
-and commits, provider job IDs, internal inspection reports, retry scripts,
-retry/recovery histories and accounting, recovery ledgers, font files, and
-renderer binaries. The published result table is the small audit surface needed
-to reproduce the reported scoring.
-
 ## License
 
 Software is licensed under Apache-2.0. Benchmark assets, data, and
