@@ -5,7 +5,7 @@ description = "Reproducible BlockSplit benchmark assets, payloads, and results"
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 dependencies = [
-    "pillow>=11.0,<12",
+    "pillow>=12.3.0,<13",
 ]
 
 [project.scripts]
