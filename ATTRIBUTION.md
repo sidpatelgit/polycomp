@@ -14,11 +14,11 @@ Indicate whether you modified the material and retain a link to the
 
 ## Scholarly citation
 
-If you use PolyComp in research, please cite the repository using
-`CITATION.cff`. The initial citation is:
+If you use PolyComp in research, please cite the accompanying paper:
 
 > Patel, Siddharth. 2026. *PolyComp: A Polycube-based Benchmark for
-> Compositional 3D Spatial Reasoning in Multimodal Models*. Version 0.1.0.
-> https://github.com/sidpatelgit/polycomp.
+> Compositional 3D Spatial Reasoning in Multimodal Models*.
+> arXiv:2608.14741. https://arxiv.org/abs/2608.14741.
 
-A paper identifier will be added when one is available.
+`CITATION.cff` records this paper as the preferred citation while retaining the
+repository and dataset metadata for this release.
