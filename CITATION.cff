@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use PolyComp, please cite it using the metadata below."
+message: "If you use PolyComp, please cite the accompanying paper using the preferred-citation metadata below."
 type: dataset
 title: "PolyComp: A Polycube-based Benchmark for Compositional 3D Spatial Reasoning in Multimodal Models"
 authors:
@@ -18,3 +18,17 @@ keywords:
   - "multimodal models"
   - "polycubes"
   - "benchmark"
+preferred-citation:
+  type: article
+  title: "PolyComp: A Polycube-based Benchmark for Compositional 3D Spatial Reasoning in Multimodal Models"
+  authors:
+    - family-names: "Patel"
+      given-names: "Siddharth"
+  date-published: 2026-08-13
+  year: 2026
+  status: preprint
+  identifiers:
+    - type: other
+      value: "arXiv:2608.14741"
+      description: "The arXiv identifier for the accompanying paper."
+  url: "https://arxiv.org/abs/2608.14741"

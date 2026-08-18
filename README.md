@@ -3,8 +3,7 @@
 PolyComp is the release package for a 120-problem spatial reasoning benchmark based on polycube rotation and composition. It
 contains the exact raster images used in the reported evaluation, normalized
 problem manifests, provider request builders for all three visual
-presentations, and the minimal 1,080-row result table used to compute the paper
-scores.
+presentations, and the minimal 1,080-row result table used to compute the scores in the [accompanying paper](https://arxiv.org/abs/2608.14741).
 
 The command-line tool is deliberately local-only. It does not read API keys,
 make network requests, submit jobs, or contain provider-recovery machinery.
